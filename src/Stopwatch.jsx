@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import ControleStopwatch from "./components/ControleStopwatch";
 import DisplayStopwatch from "./components/DisplayStopwatch";
 
-function Stopwatch () {
+function Stopwatch() {
 
   const [time, setTime] = useState(0);
 
@@ -13,7 +13,7 @@ function Stopwatch () {
       />
       <ControleStopwatch
         setTime={setTime}
-        time = {time}
+        time={time}
       />
     </div>
   )

@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 
-function ResetStopwatch ({setTime, setIsRunning}) {
+function ResetStopwatch({setTime, setIsRunning}) {
 
   const resetTimer = () => {
     setIsRunning(false);
@@ -15,7 +15,7 @@ function ResetStopwatch ({setTime, setIsRunning}) {
         onClick={resetTimer}
       >
         Reset
-        </Button>
+      </Button>
     </>
   )
 }
