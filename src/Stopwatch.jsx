@@ -13,7 +13,6 @@ function Stopwatch() {
       />
       <ControleStopwatch
         setTime={setTime}
-        time={time}
       />
     </div>
   )
