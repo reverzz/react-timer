@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Button from "./Button";
-import "../index.css"
 import ResetStopwatch from "./ResetStopwatch";
-
 
 function ControleStopwatch({setTime, time}) {
 

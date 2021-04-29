@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import "./index.css"
 import ControleStopwatch from "./components/ControleStopwatch";
+import DisplayStopwatch from "./components/DisplayStopwatch";
 
 function Stopwatch () {
 
@@ -8,7 +8,9 @@ function Stopwatch () {
 
   return (
     <div className="stopwatch">
-      <p className="display"> {time} </p>
+      <DisplayStopwatch
+        time={time}
+      />
       <ControleStopwatch
         setTime={setTime}
         time = {time}
