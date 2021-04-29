@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useMemo, useCallback} from "react";
 import "./index.css"
-import Button from "./button";
+import Button from "./components/Button";
+import Stopwatch from "./Stopwatch";
 
 function App() {
 
@@ -36,8 +37,8 @@ function App() {
 
   useEffect(() => {
     let timer;
-    timer = time > 0 && setInterval(() => setTime(time - 1), 1000);
-    return () => clearInterval(timer);
+    timer = time > 0 && setTimeout(() => setTime(time - 1), 1000);
+    return () => clearTimeout(timer);
   }, [time]);
 
   const outputMinutes = useMemo(() => {
@@ -57,36 +58,39 @@ function App() {
   }
 
   return (
-    <div className="timer">
-      <p className="timer__display"> {outputMinutes} : {outputSeconds} </p>
-      <p> Enter the time: </p>
-      <input
-        className="timer__input"
-        type="number"
-        placeholder="mm"
-        value={minutes}
-        onChange={getMinutes}
-      />
-      <input
-        className="timer__input"
-        type="number"
-        placeholder="ss"
-        value={seconds}
-        onChange={getSeconds}
-      />
-      <Button
-        className="timer__button"
-        onClick={startTimer}
-        disabled={time > 0}
-      >
-        Start
-      </Button>
-      <Button
-        className="timer__button"
-        onClick={resetTimer}
-      >
-        Reset
-      </Button>
+    <div>
+      <div className="timer">
+        <p className="display"> {outputMinutes} : {outputSeconds} </p>
+        <p> Enter the time: </p>
+        <input
+          className="timer__input"
+          type="number"
+          placeholder="mm"
+          value={minutes}
+          onChange={getMinutes}
+        />
+        <input
+          className="timer__input"
+          type="number"
+          placeholder="ss"
+          value={seconds}
+          onChange={getSeconds}
+        />
+        <Button
+          className="timer__button"
+          onClick={startTimer}
+          disabled={time > 0}
+        >
+          Start
+        </Button>
+        <Button
+          className="timer__button"
+          onClick={resetTimer}
+        >
+          Reset
+        </Button>
+      </div>
+      <Stopwatch/>
     </div>
   )
 }
