@@ -22,11 +22,6 @@ function Stopwatch() {
 
   return (
     <div className="stopwatch">
-      <ControlStopwatch
-        setTime={setTime}
-        isRunning={isRunning}
-        setIsRunning={setIsRunning}
-      />
       <DisplayStopwatch
         time={time}
       />
