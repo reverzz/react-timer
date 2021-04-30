@@ -7,7 +7,7 @@ function DisplayStopwatch({time}) {
 
   return (
     <p className="display"> {seconds}.{mSeconds}s </p>
-  )
+  );
 }
 
 export default DisplayStopwatch;

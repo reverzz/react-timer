@@ -1,26 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import Button from "./Button";
 import ResetStopwatch from "./ResetStopwatch";
 
-function ControleStopwatch({setTime}) {
-
-  const [isRunning, setIsRunning] = useState(false);
+function ControlStopwatch({setTime, isRunning, setIsRunning}) {
 
   const startCount = () => setIsRunning(true);
   const pauseCount = () => setIsRunning(false);
-
-  useEffect(() => {
-    let timer;
-    if (isRunning) {
-      timer = setInterval(() => {
-        setTime(prevTime => prevTime + 1);
-      }, 100);
-    }
-
-    return () => {
-      clearInterval(timer);
-    };
-  }, [isRunning]);
 
   return (
     <>
@@ -45,4 +30,4 @@ function ControleStopwatch({setTime}) {
   );
 }
 
-export default ControleStopwatch;
+export default ControlStopwatch;
